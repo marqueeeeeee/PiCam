@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sample Site</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .container { padding-top:50px; }
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default" data-spy="affix" data-offset-top="197" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">PiCam</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Gallery</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <button type="button" class="btn btn-primary" onclick="TakePhoto()"><span class="glyphicon glyphicon-camera"></span> Take Photo</button>
+    </div>
+
+    <div class="row">
+        <button type="button" class="btn btn-primary" onclick="RecordVideo()"><span class="glyphicon glyphicon-facetime-video"></span> Record Video</button>
+        <button type="button" class="btn btn-primary" onclick="StopRecordVideo()"><span class="glyphicon glyphicon-stop"></span> Stop Recording</button>
+    </div>
+
+    <div class="row">
+        <button type="button" class="btn btn-primary" onclick="StartTimelapse()"><span class="glyphicon glyphicon-time"></span> Record Timelapse</button>
+        <button type="button" class="btn btn-primary" onclick="StopTimelapse()"><span class="glyphicon glyphicon-stop"></span> Stop Timelapse</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    function TakePhoto() {
+        console.log("Take Photo");
+        $.ajax({
+            url: "./capture",
+            success: function (data, status, request) {
+                console.log(data);
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    }
+
+    function RecordVideo() {
+
+    }
+
+    function StopRecordVideo() {
+
+    }
+
+    function StartTimelapse() {
+
+    }
+
+    function StopTimelapse() {
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

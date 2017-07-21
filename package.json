@@ -4,7 +4,7 @@
   "description": "action camera web controlled",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "test": "node app.js"
   },
   "author": "",
   "license": "ISC",
