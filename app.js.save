@@ -1,0 +1,34 @@
+var express = require('express');
+var app = express();
+var cam = require('raspicam');
+
+var port = process.env.PORT || 3002;
+var busy = false;
+
+app.get('/', function (req, res) {
+  res.send('Camera App');
+})
+
+app.post('/capture', function(req, res) {
+  if(!busy) {
+     capturePhoto();
+  }
+});
+
+function capturePhoto() {
+    var photo = new cam({
+	mode: "photo",
+	output: __dirname + "test.jpg"	
+    });
+
+    photo.start();
+
+    photo.on("exit", function() {
+
+    })
+}
+
+app.listen(port);
+console.log('server listening on port:' + port);
+
+exports = module.exports = app;
