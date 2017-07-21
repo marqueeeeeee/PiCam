@@ -3,7 +3,7 @@ var app = express();
 var raspicam = require('raspicam');
 var moment = require('moment');
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 var busy = false;
 var filename = '';
 var vidcam;
@@ -66,9 +66,9 @@ function startTimelapse(req, res) {
         width: 1280,
         height: 720,
         encoding: "jpg",
-        quality: 100,
+        quality: 60,
         nopreview: true,
-	timelapse: 5000,
+	timelapse: 20000,
   });
   vidcam.start();
   var isrecording = encodeURIComponent('true');
